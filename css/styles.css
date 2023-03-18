@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Tasks__container {
+    height: 100vh;
+}
+
+.Task__input {
+    flex: 20;
+}
+
+.Task__add {
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.Tasks__task:hover .Task__delete {
+    opacity: 1;
+}
+
+.Task__complete {
+    cursor: pointer;
+}
+
+.Task__delete {
+    transition: 0.2s;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.Task__done {
+    text-decoration: line-through;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.Task__row-done {
+    background: green;
+}
+
+.Task__row-done span {
+    color: white;
+}
+
+.Task__row-done .Task__delete {
+    color: #ff9e9e !important;
+}
+
