@@ -49,7 +49,7 @@ function addTodo(e) {
                                         <span class="d-flex h-100 align-items-center ${todo.done ? 'Task__done' : ''}">${todo.title}</span>
                                         <i onclick=deleteTask(${todo.id}) class="Task__delete fas fa-trash-alt ml-auto text-danger opacity-25"></i>
                                     </div>`;
-    console.log(todos)
+    taskInput.value = '';
 }
 
 taskForm.addEventListener('submit', addTodo);
