@@ -36,8 +36,9 @@ function addTodo(e) {
     e.preventDefault();
     console.log(taskInput.value);
     if(taskInput.value == '') return alert('Please, add title to the todo!');
+    var lastTodo = todos[todos.length - 1];
     var todo = {
-        id: todos[todos.length - 1].id + 1,
+        id: lastTodo ? lastTodo.id + 1 : 1,
         title: taskInput.value
     }
 
