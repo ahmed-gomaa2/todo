@@ -23,13 +23,13 @@ var todos = [
 function draw(todos) {
     tasksContainer.innerHTML = '';
 
-    todos.forEach(function(todo) {
+    todos.length > 0 ? todos.forEach(function(todo) {
         tasksContainer.innerHTML += `<div id=${todo.id} class="Tasks__task d-flex align-items-center p-2 border mb-2 ${todo.done && 'Task__row-done'}"}>
                                         <input ${todo.done && 'checked'} onclick= completeTask(${todo.id}) class="Task__complete mr-4" type="checkbox" >
                                         <span class="d-flex h-100 align-items-center ${todo.done ? 'Task__done' : ''}">${todo.title}</span>
                                         <i onclick=deleteTask(${todo.id}) class="Task__delete fas fa-trash-alt ml-auto text-danger d-lg-none d-block"></i>
                                     </div>`;
-    });
+    }) : tasksContainer.innerHTML += `<p class="text-center">Please add some todos!</p>`;
 }
 
 function addTodo(e) {
@@ -42,11 +42,15 @@ function addTodo(e) {
     }
 
     todos.push(todo);
-    tasksContainer.innerHTML += `<div class="Tasks__task d-flex align-items-center p-2 border mb-2 ${todo.done && 'Task__row-done'}"}>
+    if(!lastTodo) {
+        draw(todos);
+    }else {
+        tasksContainer.innerHTML += `<div class="Tasks__task d-flex align-items-center p-2 border mb-2 ${todo.done && 'Task__row-done'}"}>
                                         <input ${todo.done && 'checked'} onclick= completeTask(${todo.id}) class="Task__complete mr-4" type="checkbox" >
                                         <span class="d-flex h-100 align-items-center ${todo.done ? 'Task__done' : ''}">${todo.title}</span>
                                         <i onclick=deleteTask(${todo.id}) class="Task__delete fas fa-trash-alt ml-auto text-danger d-lg-none d-block"></i>
                                     </div>`;
+    }
     taskInput.value = '';
 }
 
