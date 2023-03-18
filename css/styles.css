@@ -19,7 +19,7 @@
 }
 
 .Tasks__task:hover .Task__delete {
-    opacity: 1;
+    display: block !important;
 }
 
 .Task__complete {
@@ -29,7 +29,6 @@
 .Task__delete {
     transition: 0.2s;
     cursor: pointer;
-    opacity: 0;
 }
 
 .Task__done {

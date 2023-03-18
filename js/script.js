@@ -27,7 +27,7 @@ function draw(todos) {
         tasksContainer.innerHTML += `<div id=${todo.id} class="Tasks__task d-flex align-items-center p-2 border mb-2 ${todo.done && 'Task__row-done'}"}>
                                         <input ${todo.done && 'checked'} onclick= completeTask(${todo.id}) class="Task__complete mr-4" type="checkbox" >
                                         <span class="d-flex h-100 align-items-center ${todo.done ? 'Task__done' : ''}">${todo.title}</span>
-                                        <i onclick=deleteTask(${todo.id}) class="Task__delete fas fa-trash-alt ml-auto text-danger opacity-25"></i>
+                                        <i onclick=deleteTask(${todo.id}) class="Task__delete fas fa-trash-alt ml-auto text-danger d-lg-none d-block"></i>
                                     </div>`;
     });
 }
@@ -47,7 +47,7 @@ function addTodo(e) {
     tasksContainer.innerHTML += `<div class="Tasks__task d-flex align-items-center p-2 border mb-2 ${todo.done && 'Task__row-done'}"}>
                                         <input ${todo.done && 'checked'} onclick= completeTask(${todo.id}) class="Task__complete mr-4" type="checkbox" >
                                         <span class="d-flex h-100 align-items-center ${todo.done ? 'Task__done' : ''}">${todo.title}</span>
-                                        <i onclick=deleteTask(${todo.id}) class="Task__delete fas fa-trash-alt ml-auto text-danger opacity-25"></i>
+                                        <i onclick=deleteTask(${todo.id}) class="Task__delete fas fa-trash-alt ml-auto text-danger d-lg-none d-block"></i>
                                     </div>`;
     taskInput.value = '';
 }
