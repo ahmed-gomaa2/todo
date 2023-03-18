@@ -34,15 +34,12 @@ function draw(todos) {
 
 function addTodo(e) {
     e.preventDefault();
-    console.log(taskInput.value);
     if(taskInput.value == '') return alert('Please, add title to the todo!');
     var lastTodo = todos[todos.length - 1];
     var todo = {
         id: lastTodo ? lastTodo.id + 1 : 1,
         title: taskInput.value
     }
-
-    console.log(todo);
 
     todos.push(todo);
     tasksContainer.innerHTML += `<div class="Tasks__task d-flex align-items-center p-2 border mb-2 ${todo.done && 'Task__row-done'}"}>
