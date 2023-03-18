@@ -55,17 +55,11 @@ function addTodo(e) {
 
 taskForm.addEventListener('submit', addTodo);
 
-draw(todos);
-
 function completeTask (id) {
-    console.log(id);
     var index = todos.map((todo, index) => {
         return todo.id;
     }).indexOf(id);
 
-    console.log(index);
-
-    console.log(todos);
     if(index != -1) {
         todos[index].done = !todos[index].done;
         draw(todos);
@@ -74,16 +68,17 @@ function completeTask (id) {
 
 
 function deleteTask(id) {
-    console.log(id);
     var index = todos.map((todo, index) => {
         return todo.id;
     }).indexOf(id);
 
-    console.log(index);
-
-    console.log(todos);
     if(index != -1) {
         todos.splice(index, 1);
         draw(todos);
     }
 }
+
+
+window.addEventListener('load' , function() {
+    draw(todos)
+});
